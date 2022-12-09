@@ -127,11 +127,11 @@ public class AllTasks {
 
         PrintHelper.blank();
 
-
     }
 
     // Task 1 ----------------------------------------------------------------------------------------------------------
 
+    // Returns the encoded message
     public static int[] encrypt(String str) {
         char [] str_char = str.toCharArray();
 
@@ -145,6 +145,7 @@ public class AllTasks {
     }
 
 
+    // Returns the decoded message
     public static String decrypt(int[] arr) {
         String str = "";
         int[] arr_char = new int[arr.length];
@@ -164,6 +165,7 @@ public class AllTasks {
 
     // Task 2 ----------------------------------------------------------------------------------------------------------
 
+    // Returns true if the chess piece can make such a move
     public static boolean canMove(String figure, String start, String end) {
         int y_start = Integer.parseInt(start.substring(1));
         int y_end = Integer.parseInt(end.substring(1));
@@ -217,6 +219,7 @@ public class AllTasks {
 
     // Task 3 ----------------------------------------------------------------------------------------------------------
 
+    // Returns true if it is possible to complete the word by adding characters
     public static boolean canComplete(String word, String full_word){
 
         char[] word_char = word.toCharArray();
@@ -243,6 +246,9 @@ public class AllTasks {
 
     // Task 4 ----------------------------------------------------------------------------------------------------------
 
+    // Adds all passed numbers
+    // Multiplies result digits until one digit remains
+    // Returns it
     public static int sumDigProd(int ... args) {
 
         int sum = 0;
@@ -274,6 +280,7 @@ public class AllTasks {
 
     // Task 5 ----------------------------------------------------------------------------------------------------------
 
+    // Returns an array of words containing all the vowels from the first word
     public static ArrayList<String> sameVowelGroup(String[] arr) {
 
         ArrayList<Character> control_vowels = unique_vowels(arr[0]);
@@ -296,6 +303,7 @@ public class AllTasks {
         return answer;
     }
 
+    // Returns array of unique vowels of string
     public static ArrayList<Character> unique_vowels(String str){
         ArrayList<Character> vowels = new ArrayList<Character>();
         vowels.add('e');
@@ -318,6 +326,7 @@ public class AllTasks {
 
     // Task 6 ----------------------------------------------------------------------------------------------------------
 
+    // Returns true if number is a valid credit card number
     public static boolean validateCard(long number) {
         char [] number_char = Long.toString(number).toCharArray();
 
@@ -360,6 +369,7 @@ public class AllTasks {
 
     // Task 7 ----------------------------------------------------------------------------------------------------------
 
+    // Converts a number to its word representation
     public static String numToEng(int number) {
         int units = number % 10;
         int dozens = (number % 100 - units) / 10;
@@ -392,6 +402,7 @@ public class AllTasks {
 
     // Task 8 ----------------------------------------------------------------------------------------------------------
 
+    // Returns SHA256 hash of string
     public static String getSHA256Hash(String str) throws NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         byte[] hash = digest.digest(str.getBytes(StandardCharsets.UTF_8));
@@ -407,6 +418,7 @@ public class AllTasks {
 
     // Task 9 ----------------------------------------------------------------------------------------------------------
 
+    // Returns a string with proper case for character titles in Game of Thrones
     public static String correctTitle(String str) {
         str = str.toLowerCase();
         String[] words = str.split(" ");
@@ -427,6 +439,7 @@ public class AllTasks {
 
     // Task 10 ---------------------------------------------------------------------------------------------------------
 
+    // Draws a hexagonal grid
     public static String hexLattice(int number) {
         if (number == 1) {
             return "o";
